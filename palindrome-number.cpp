@@ -1,4 +1,7 @@
 /*
+Problem: https://leetcode.com/problems/palindrome-number/
+
+Editorial:
 
 This is a very basic problem, we just need to check if the given integer is a palindrome or not. A palindromic number is a number which remains same when its digits are reversed. 
 We can reverse an integer by appending the last digit of a number to the last of a new number till there is a digit left to the original number.
