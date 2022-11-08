@@ -8,7 +8,7 @@ We can add it to the last by multiplying the previous number by 10 and then addi
 
 There are two things to keep in mind. First, any negative number cannot be a palindrome. Second, the reversal of a 31-bit number can be more than 31-bit. So we need to use 63 bits to store the reversed number.
 
-test
+
 */
 
 class Solution {
