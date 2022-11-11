@@ -26,9 +26,14 @@ To solve this problem what we will maintain is called a monotonic stack. [https:
 
 Here we will maintain a decreasing stack. 
 
-Initially we push a max value to the stack. Then for each number or price we get we keep popping the numbers which are less or equal to the current number. When we find a number in top of the stack which is greater than the current number we know all of the numbers which are in right postions from this are smaller or equal than the current number. Also we need to keep the indices of the numbers too in the stack. We calculate the answer and push the current number to the stack. Or we can maintain a different stack for that if we want.
+Initially we push a max value to the stack. Then for each number or price we get we keep popping the numbers 
+which are less or equal to the current number. When we find a number in top of the stack which is greater 
+than the current number we know all of the numbers which are in right postions from this are smaller or equal than the current number.
+Also we need to keep the indices of the numbers too in the stack. We calculate the answer and push the current number to the stack. 
+Or we can maintain a different stack for that if we want.
 
-Notice that each number will at most be pushed in queue once and popped once. So the time complexity is O(n). Also the queue can contain at most n numbers. So the auxiliary space will be taken at most is n. So, space complexity is O(n) too.
+Notice that each number will at most be pushed in queue once and popped once. So the time complexity is O(n). 
+Also the queue can contain at most n numbers. So the auxiliary space will be taken at most is n. So, space complexity is O(n) too.
 
 Solution:
 */
