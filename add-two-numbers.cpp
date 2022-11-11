@@ -12,9 +12,11 @@ There can be two cases..
 1. Length or number of digits of the two numbers are same
 2. They are not the same
 
-We need to handle both of the cases, first, we will keep adding and storing until we reach the end of any number. Then we operate only on the single number that has any digit left.
+We need to handle both of the cases, first, we will keep adding and storing until we reach the end of any number. 
+Then we operate only on the single number that has any digit left.
 
-From basic math, we know while adding, there can be carried. Initially, the carry is 0. We add two digits and the carry. If the resulting sum is greater than 9 then we need to carry 1 for the next add operation, and the resulting digit is sum % 10.
+From basic math, we know while adding, there can be carried. Initially, the carry is 0. We add two digits and the carry. 
+If the resulting sum is greater than 9 then we need to carry 1 for the next add operation, and the resulting digit is sum % 10.
 
 We also do this for the single number left.
 
