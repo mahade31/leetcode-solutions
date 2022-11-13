@@ -1,6 +1,22 @@
 /*
 Problem: https://leetcode.com/problems/find-median-from-data-stream/
 
+Editorial:
+This problem can be solved using Segment Tree or Binary Indexed Tree or Policiy Based Data 
+Structure but here we will talk about a trickier and simple solution.
+
+We will solve the problem using two heaps, one is max heap another is min heap.
+
+We will maintain the heaps in such a way that after being sorted first half of the elements
+are stored in a max heap and another half in stored in a min heap.
+
+That way we can always get two middle elements of current numbers.
+So when addNum is called we add it in the heap which is less in size. Then if necessery we
+swap the two top elements to maintain the two halves property.
+
+So complexity of each operation in O(logn). Thus overall time complexity is O(nlogn).
+And space complexity is O(n) cause we will use store at most n numbers in the heap.
+
 Solution:
 */
 class MedianFinder {
