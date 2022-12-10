@@ -5,7 +5,6 @@ Editorial:
 
 
 Complexity: Time complexity O(log m) * O(log n)
-
 */
 class Solution {
 public:
