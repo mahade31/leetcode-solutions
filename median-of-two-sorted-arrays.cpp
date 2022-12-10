@@ -1,6 +1,11 @@
 /*
 Problem: https://leetcode.com/problems/median-of-two-sorted-arrays/
 
+Editorial: 
+
+
+Complexity: Time complexity O(log m) * O(log n)
+
 */
 class Solution {
 public:
