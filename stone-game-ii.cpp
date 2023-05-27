@@ -4,10 +4,8 @@ class Solution {
 public:
     int dp[101][101];
     int solve(vector <int>& piles, int i, int m, int suf[]) {
-        if (i == piles.size())
+        if (i >= piles.size())
             return 0;
-        if (i + 2 * m >= piles.size())
-            return suf[i];
         if (dp[i][m])
             return dp[i][m];
         int mx = 0;
