@@ -4,15 +4,13 @@ class Solution {
 public:
 int dp[50004][5];
     int solve(vector <int>& piles, int i, int m, int suf[]) {
-        if (i == piles.size())
+        if (i >= piles.size())
             return 0;
-        if (i + m >= piles.size())
-            return suf[i];
         if (dp[i][m] != 1e9)
             return dp[i][m];
-        int mx = 0;
+        int mx = -1e9;
         for (int j = 1; j <= m; ++j) {
-                mx = max(mx,  suf[i] - solve(piles, i + j, 3, suf));
+            mx = max(mx,  suf[i] - solve(piles, i + j, 3, suf));
         }
 
         return dp[i][m] = mx;
@@ -31,7 +29,7 @@ int dp[50004][5];
             suf[i] = suf[i + 1] + piles[i];
         int alice = solve(piles, 0, 3, suf);
         int bob = suf[0] - alice;
-
+        cout << alice << " " << bob << endl;
         if (alice > bob)
             return "Alice";
         else if (bob > alice)
