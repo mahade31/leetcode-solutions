@@ -76,3 +76,33 @@ public:
         return ret;
     }
 };
+
+//sliding window:
+//time: O(n), space: O(1)
+
+class Solution {
+public:
+    int maxConsecutiveAnswers(string answerKey, int k) {
+        int len = answerKey.length();
+        int ret = -1;
+        
+        int i = 0, t = 0, f = 0;
+        for (int j = 0; j < len; ++j) {
+            t += answerKey[j] == 'T';
+            f += answerKey[j] == 'F';
+            if (t <= k or f <= k) {
+                ret = max(ret, j - i + 1);
+                continue;
+            }
+            
+            while (i < j) {
+                t -= answerKey[i] == 'T';
+                f -= answerKey[i] == 'F';
+                ++i;
+                if (t <= k or f <= k) break;
+            }
+        }
+
+        return ret;
+    }
+};
