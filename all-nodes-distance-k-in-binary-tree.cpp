@@ -45,3 +45,49 @@ public:
         return ret;
     }
 };
+
+//without using visited array
+
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ * };
+ */
+class Solution {
+private:
+vector <int> vec[1003];
+vector <int> ret;
+public:
+    void dfs(int u, int p, int level, int k) {
+        if (level == k) {
+            ret.push_back(u);
+            return;
+        }
+        for (int v : vec[u]) {
+            if (v != p)
+                dfs(v, u, level + 1, k);
+        }
+    }
+    void makeTree(TreeNode* root) {
+        if (root == NULL) return;
+        if (root -> left) {
+            vec[root -> val].push_back(root -> left -> val);
+            vec[root -> left -> val].push_back(root -> val);
+            makeTree(root -> left);
+        }
+        if (root -> right) {
+            vec[root -> val].push_back(root -> right -> val);
+            vec[root -> right -> val].push_back(root -> val);
+            makeTree(root -> right);
+        }
+    }
+    vector<int> distanceK(TreeNode* root, TreeNode* target, int k) {
+        makeTree(root);
+        dfs(target -> val, -1, 0, k);
+        return ret;
+    }
+};
