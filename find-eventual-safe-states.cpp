@@ -29,3 +29,48 @@ public:
         return ret;
     }
 };
+
+//topological sort
+
+class Solution {
+public:
+    vector<int> eventualSafeNodes(vector<vector<int>>& graph) {
+        int n = graph.size();
+        vector <int> ret;
+        
+        vector <vector<int>> rev_graph(n, vector<int>());
+        vector <int> out_degree(n);
+        for (int u = 0; u < n; ++u) {
+            for (int v : graph[u]) {
+                rev_graph[v].push_back(u);
+                ++out_degree[u];
+            }
+        }
+
+        queue <int> q;
+        for (int i = 0; i < n; ++i) {
+            if (out_degree[i] == 0) {
+                q.push(i);
+            }
+        }
+
+        vector <int> is_safe(n);
+        while (!q.empty()) {
+            int u = q.front();
+            q.pop();
+            is_safe[u] = true;
+            for (int v : rev_graph[u]) {
+                --out_degree[v];
+                if (out_degree[v] == 0) {
+                    q.push(v);
+                }
+            }
+        }
+
+        for (int i = 0; i < n; ++i) {
+            if (is_safe[i]) ret.push_back(i);
+        }
+
+        return ret;
+    }
+};
