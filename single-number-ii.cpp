@@ -12,3 +12,17 @@ public:
         return -1;
     }
 };
+
+//O(n) using bit manipulation
+
+class Solution {
+public:
+    int singleNumber(vector<int>& nums) {
+        int one_time = 0, two_time = 0;
+        for (int a : nums) {
+            one_time ^= a & ~two_time;
+            two_time ^= a & ~one_time;
+        }
+        return one_time;
+    }
+};
