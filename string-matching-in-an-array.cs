@@ -3,6 +3,8 @@ Problem: https://leetcode.com/problems/string-matching-in-an-array/description/
 
 
 Solution:
+		Time: O(n*m)
+		Space: O(n)
 */
 public class Solution {
     public IList<string> StringMatching(string[] words) {

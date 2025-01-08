@@ -2,6 +2,8 @@
 Problem: https://leetcode.com/problems/count-prefix-and-suffix-pairs-i/
 
 Solution:
+	Time: O(n * m)
+	Space: O(1)
 */
 public class Solution {
     public int CountPrefixSuffixPairs(string[] words) {
