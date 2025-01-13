@@ -3,7 +3,7 @@ Problem: https://leetcode.com/problems/minimum-length-of-string-after-operations
 
 
 Solution:
-	Time: O(n * log(m))
+	Time: O(n)
 	Space: O(1)
 
 */
