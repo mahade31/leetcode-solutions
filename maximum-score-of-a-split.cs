@@ -1,5 +1,8 @@
 //problem: https://leetcode.com/problems/maximum-score-of-a-split
 
+//time complexity: O(n)
+//space complexity: O(1)
+
 //solution:
 public class Solution {
     public long MaximumScore(int[] nums) {
